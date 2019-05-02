@@ -1,11 +1,22 @@
 export class prenotaz
 {
-    id:number;
     nome:string;
     cognome:string;
     indirizzo:string;
     telefono:string;
     email:string;
-    dataPrenotaz:Date;
-    oraPrenotaz:Date;
+    dataPrenotaz:string;
+    oraPrenotaz:string;
+
+    constructor( nome: string, cognome: string, indirizzo: string, telefono: string, email: string, dataPrenotaz: string, oraPrenotaz: string) {
+
+    this.nome = nome;
+    this.cognome = cognome;
+    this.indirizzo = indirizzo;
+    this.telefono = telefono;
+    this.email = email;
+    this.dataPrenotaz = dataPrenotaz;
+    this.oraPrenotaz = oraPrenotaz;
+
+  }
 }

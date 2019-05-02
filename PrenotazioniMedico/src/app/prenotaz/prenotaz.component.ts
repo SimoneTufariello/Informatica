@@ -10,12 +10,6 @@ import {prenotaz} from './prenotaz.module';
 })
 export class PrenotazComponent implements OnInit {
 
-  prenotazData : prenotaz[];
-  data: Object;
-  loading: boolean;
-  o: Observable<Object>;
-  oFoo : Observable<prenotaz[]>;
-  constructor(public http: HttpClient) { }
 
   ngOnInit() {
   }

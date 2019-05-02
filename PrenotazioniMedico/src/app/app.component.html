@@ -1,2 +1,16 @@
-<app-prenotaz> </app-prenotaz>
+<form>
+    <h1>Aggiunggi Prenotazione</h1> <br>
+    Nome:<input #nome> <br><br>
+    Cognome:<input #cognome> <br><br>
+    Indirizzo:<input #indirizzo> <br><br>
+    Telefono:<input #telefono> <br><br>
+    Email:<input #email> <br><br>
+    Data Prenotazione:<input #dataPrenotaz> <br><br>
+    Ora Prenotazione:<input #oraPrenotaz> <br><br>
+    <button (click)="AddPrenotazione(nome, cognome, indirizzo, telefono, email, dataPrenotaz, oraPrenotaz)">Aggiungi</button>
+</form>
+<br><br>
 
+<app-prenotaz
+    *ngFor="let pren of prenotaz" [prenotaz]="pren">
+  </app-prenotaz>
