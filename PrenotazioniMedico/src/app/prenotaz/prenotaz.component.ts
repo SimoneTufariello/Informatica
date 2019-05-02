@@ -9,6 +9,7 @@ import {prenotaz} from './prenotaz.module';
   styleUrls: ['./prenotaz.component.css']
 })
 export class PrenotazComponent implements OnInit {
+
   prenotazData : prenotaz[];
   data: Object;
   loading: boolean;
