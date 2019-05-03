@@ -21,7 +21,7 @@ export class AppComponent {
    constructor(public http: HttpClient) {
     //Fai la get e ottieni la lista di articoli e riempi il vettore articles
     this.prenotaz = new Array<prenotaz>();
-    this.vettPren = this.http.get<prenotaz[]>('https://my-json-server.typicode.com/DB/DBMedico');
+    this.vettPren = this.http.get<prenotaz[]>('https://raw.githubusercontent.com/DB/DBMedico/master/db.json');
     this.vettPren.subscribe(this.riceviDati);
   }
 
@@ -44,7 +44,7 @@ export class AppComponent {
 
     this.tempPren = new prenotaz(nome.value, cognome.value, indirizzo.value, telefono.value, email.value, dataPrenotaz.value, oraPrenotaz.value);
     this.loading = true;
-    this.oPren = this.http.post('https://my-json-server.typicode.com/DB/DBMedico', JSON.stringify(this.tempPren));
+    this.oPren = this.http.post('https://raw.githubusercontent.com/DB/DBMedico/master/db.json', JSON.stringify(this.tempPren));
 
 
     this.oPren.subscribe(data => {

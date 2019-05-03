@@ -10,7 +10,7 @@
     <button (click)="AddPrenotazione(nome, cognome, indirizzo, telefono, email, dataPrenotaz, oraPrenotaz)">Aggiungi</button>
 </form>
 <br><br>
-
+<pre>{{data | json}}</pre>
 <app-prenotaz
     *ngFor="let pren of prenotaz" [prenotaz]="pren">
   </app-prenotaz>
