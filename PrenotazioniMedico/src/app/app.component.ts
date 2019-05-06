@@ -13,50 +13,63 @@ export class AppComponent {
   prenotaz : prenotaz[];
   data: Object;
   loading: boolean;
-  vettPren : Observable<prenotaz[]>;
   oPren: Observable<Object>;
-  num: number = 0;
-  tempPren: prenotaz;
+
 
    constructor(public http: HttpClient) {
+    this.riceviTutto();
     //Fai la get e ottieni la lista di articoli e riempi il vettore articles
-    this.prenotaz = new Array<prenotaz>();
+    /*this.prenotaz = new Array<prenotaz>();
     this.vettPren = this.http.get<prenotaz[]>('https://raw.githubusercontent.com/DB/DBMedico/master/db.json');
-    this.vettPren.subscribe(this.riceviDati);
+    this.vettPren.subscribe(this.riceviDati);*/
   }
 
-  riceviDati = (data) => {
-   // this.articles = data; //Se non ci fossero metodi, basterebbe fare così
-    for(let element of data)
-    {
-       this.prenotaz.push(new prenotaz(element.nome, element.cognome, element.indirizzo, element.telefono, element.email, element.dataPrenotaz, element.oraPrenotaz ));
-    }
-  /*  data.forEach(element => {
-      this.articles.push(new Article(element.title, element.body));
-    });*/
+  riceviTutto(): void {
+     console.log("here");
+     this.loading = true;
+     this.oPren = this.http.get<prenotaz[]>('https://github.com/SimoneTufariello/DBMedico/prenotazioni');
+     this.oPren.subscribe(this.getData);
+   }
+
+   getData = (d : prenotaz[]) =>
+   {
+     this.data = new Object(d);
+     this.prenotaz = d;
+     this.loading = false;
+     console.log(this.prenotaz);
+   }
+
+  AddPrenotazione(nome: HTMLInputElement, cognome: HTMLInputElement , indirizzo:HTMLInputElement  , telefono: HTMLInputElement, email: HTMLInputElement, dataPrenotaz: HTMLInputElement , oraPrenotaz: HTMLInputElement): boolean {
+
+  var disponibPosto = true;
+  for(var i = 0; i < this.prenotaz.length; i++) {
+      if ((this.prenotaz[i].dataPrenotaz /*proprieta*/ == dataPrenotaz.value) && (this.prenotaz[i].oraPrenotaz /*proprieta*/ == oraPrenotaz.value)) {
+          disponibPosto = false;
+          break;
+      }
   }
 
-  AddPrenotazione(nome: HTMLInputElement, cognome: HTMLInputElement, indirizzo: HTMLInputElement, telefono: HTMLInputElement, email: HTMLInputElement, dataPrenotaz: HTMLInputElement, oraPrenotaz: HTMLInputElement): boolean {
+  if (disponibPosto != true){
 
+      this.prenotaz.push(new prenotaz(nome.value, cognome.value, indirizzo.value , telefono.value , email.value , dataPrenotaz.value , oraPrenotaz.value));
 
-    //mandi un apost al server
-    console.log("Sto aggiungendo la prenotaz");
+  }else{
 
-    this.tempPren = new prenotaz(nome.value, cognome.value, indirizzo.value, telefono.value, email.value, dataPrenotaz.value, oraPrenotaz.value);
-    this.loading = true;
-    this.oPren = this.http.post('https://raw.githubusercontent.com/DB/DBMedico/master/db.json', JSON.stringify(this.tempPren));
+    alert("Errore, il posto non è disponibile!");
+}
 
-
-    this.oPren.subscribe(data => {
-      this.data = data;
-
-      //console.log(data);
-      this.loading = false;
-
-      this.prenotaz.push(this.tempPren);
-
-    });
-
+    /*nome.value = '';
+    cognome.value = '';
+    indirizzo.value = '';
+    telefono.value= '';
+    email.value= '';
+    data.value= '';
+    ora.value= '';*/
     return false;
   }
+
+
 }
+
+
+

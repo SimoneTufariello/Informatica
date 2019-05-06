@@ -10,7 +10,7 @@ import {prenotaz} from './prenotaz.module';
 })
 export class PrenotazComponent implements OnInit {
 
-  @Input() prenotaz: prenotaz
+  @Input() prenotazione: prenotaz
 
   ngOnInit() {
   }
