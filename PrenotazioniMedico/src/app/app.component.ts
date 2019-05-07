@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { prenotaz } from './prenotaz/prenotaz.module';
+import { Observable } from 'rxjs'; //OBSERVABLE
+import { HttpClient } from '@angular/common/http'; //HTTP Client
+import { prenotaz } from './prenotaz/prenotaz.model'; //MODEL
 
 @Component({
   selector: 'app-root',
@@ -10,10 +10,18 @@ import { prenotaz } from './prenotaz/prenotaz.module';
 })
 
 export class AppComponent {
-  prenotaz : prenotaz[];
+  prenotaz : prenotaz[]; //Stesso nome model
   data: Object; //usato per post
   loading: boolean;
   oPren: Observable<Object>;
+
+  prenotazioneDettagliata:prenotaz; //Stesso nome model
+
+
+  dettagliare(prenotazioneCliccata:prenotaz){
+
+    this.prenotazioneDettagliata = prenotazioneCliccata;
+  }
 
 
    constructor(public http: HttpClient) {

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import {prenotaz} from './prenotaz.module';
+import {prenotaz} from './prenotaz.model';
 
 @Component({
   selector: 'app-prenotaz',

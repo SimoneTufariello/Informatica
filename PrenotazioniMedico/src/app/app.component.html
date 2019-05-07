@@ -11,7 +11,8 @@
 </form>
 <br><br>
  <h1>Lista Prenotazioni</h1> <br>
-<app-prenotaz *ngFor="let a of prenotaz" [prenotazione]="a" (click)="dettagli(a)"> </app-prenotaz>
+<app-prenotaz *ngFor="let a of prenotaz" [prenotazione]="a" (click)="dettagliare(a)"> </app-prenotaz>
 
 <h1>Dettaglio Prenotazione</h1>
-<!-- <app-dettagliPrenotaz [prenotazione] = "prenotazioneDettagliare" ></app-dettagliPrenotaz> -->
+<app-dettagli-prenotaz [InputPrenotazione] = "prenotazioneDettagliata" ></app-dettagli-prenotaz>
+ <!-- -->
