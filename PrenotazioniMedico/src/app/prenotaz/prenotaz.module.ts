@@ -5,8 +5,8 @@ export class prenotaz
     indirizzo:string;
     telefono:string;
     email:string;
-    dataPrenotaz:string;
-    oraPrenotaz:string;
+    dataPrenot:string;
+    oraPrenot:string;
 
     constructor( nome: string, cognome: string, indirizzo: string, telefono: string, email: string, dataPrenotaz: string, oraPrenotaz: string) {
 
@@ -15,8 +15,8 @@ export class prenotaz
     this.indirizzo = indirizzo;
     this.telefono = telefono;
     this.email = email;
-    this.dataPrenotaz = dataPrenotaz;
-    this.oraPrenotaz = oraPrenotaz;
+    this.dataPrenot = dataPrenotaz;
+    this.oraPrenot = oraPrenotaz;
 
   }
 }
