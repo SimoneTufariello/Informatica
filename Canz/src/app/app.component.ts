@@ -33,4 +33,12 @@ export class AppComponent {
      this.loading = false;
      console.log(this.album);
    }
+
+   AddAlbum(id: HTMLInputElement, titoloA: HTMLInputElement , artista:HTMLInputElement  , durataA: HTMLInputElement, dataUscita: HTMLInputElement, durataC: HTMLInputElement , titoloC: HTMLInputElement): boolean {
+
+    console.log(this.album);
+    this.album.push(new songlist(Number(id.value), titoloA.value, artista.value , Number(durataA.value) , dataUscita.value , Number(durataC.value) , titoloC.value));
+
+    return false;
+   }
 }
