@@ -14,13 +14,16 @@
 <br>
   <div>
     <h1>Lista Canzoni</h1> <br>
-    <app-songlist *ngFor="let a of album" [album]="a"> </app-songlist>
+    <app-songlist *ngFor="let a of album" [album]="a" (click)="dettagliare(a)"> </app-songlist>
   </div>
 </div>
 
 
-
-<!-- <h1>Dettaglio Prenotazione</h1>
+<div>
+    <h1>Dettaglio Canzone</h1> <br>
+    <app-dettaglialbum [albumDettagliato] = "albumDettagliato" ></app-dettaglialbum>
+</div>
+<!-- <h1>/h1>
 <app-dettagli-prenotaz [InputPrenotazione] = "prenotazioneDettagliata" ></app-dettagli-prenotaz> -->
 
 

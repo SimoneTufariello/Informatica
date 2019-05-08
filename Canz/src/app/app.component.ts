@@ -41,4 +41,12 @@ export class AppComponent {
 
     return false;
    }
+
+    albumDettagliato:songlist; //Stesso nome model
+
+
+    dettagliare(albumDettagliato:songlist){
+      this.albumDettagliato = albumDettagliato;
+  }
+
 }

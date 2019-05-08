@@ -4,11 +4,13 @@ import { HttpClientModule } from '@angular/common/http'; //Importa Il modulo htt
 
 import { AppComponent } from './app.component';
 import { SonglistComponent } from './songlist/songlist.component';
+import { DettaglialbumComponent } from './dettaglialbum/dettaglialbum.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SonglistComponent
+    SonglistComponent,
+    DettaglialbumComponent
   ],
   imports: [
     BrowserModule, HttpClientModule //Aggiungi il modulo http qui
