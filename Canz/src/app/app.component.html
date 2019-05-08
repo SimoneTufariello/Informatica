@@ -12,12 +12,13 @@
   </form>
 
 <br>
-  <div>
+  <div *ngIf='isViewable'>
     <h1>Lista Canzoni</h1> <br>
     <app-songlist *ngFor="let a of album" [album]="a" (click)="dettagliare(a)"> </app-songlist>
   </div>
 </div>
-
+<br>
+<button (click)='toggle()'>Mostra/Nascondi</button>
 
 <div>
     <h1>Dettaglio Canzone</h1> <br>

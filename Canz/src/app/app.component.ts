@@ -14,10 +14,11 @@ export class AppComponent {
   data: Object; //usato per post
   loading: boolean;
   oAlbum: Observable<Object>;
+  public isViewable: boolean;
 
   constructor(public http: HttpClient) {
     this.riceviAlbum();
-
+    this.isViewable = true;
   }
 
   riceviAlbum(): void {
@@ -48,5 +49,7 @@ export class AppComponent {
     dettagliare(albumDettagliato:songlist){
       this.albumDettagliato = albumDettagliato;
   }
+
+  public toggle(): void { this.isViewable = !this.isViewable; }
 
 }
