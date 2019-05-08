@@ -11,13 +11,14 @@
       <button (click)="AddAlbum(idA, titoloA, artista, durataA, dataUscita, durataC, titoloC)">Aggiungi</button>
   </form>
 
-  <br>
+<br>
   <div>
     <h1>Lista Canzoni</h1> <br>
+    <app-songlist *ngFor="let a of album" [album]="a"> </app-songlist>
   </div>
 </div>
 
-<!-- <app-prenotaz *ngFor="let a of prenotaz" [prenotazione]="a" (click)="dettagliare(a)"> </app-prenotaz> -->
+
 
 <!-- <h1>Dettaglio Prenotazione</h1>
 <app-dettagli-prenotaz [InputPrenotazione] = "prenotazioneDettagliata" ></app-dettagli-prenotaz> -->
