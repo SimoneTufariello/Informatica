@@ -1,20 +1,21 @@
 
 <div class="container">
-  <h2>Vertical (basic) form</h2>
-  <form action="/action_page.php">
+  <h2>Login</h2>
+  <form>
     <div class="form-group">
-      <label for="username">Username:</label>
-      <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+      <label for="username">Name:</label>
+      <input type="text" class="form-control" id="nome" placeholder="Enter name" name="nome" required="required">
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
+      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required="required">
     </div>
 
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button (click)="LogUser(nome, password)" class="btn btn-primary">Send</button>
+    <p>{{err}}</p>
   </form>
 </div>
 
