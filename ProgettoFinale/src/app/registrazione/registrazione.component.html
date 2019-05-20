@@ -2,41 +2,42 @@
 
 <div class="container">
   <h2>Register</h2>
-  <form>
+
     <div class="form-group">
       <label for="username">Username:</label>
-      <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required="required">
+      <input type="text" #username class="form-control" id="username" placeholder="Enter username"  required="required">
     </div>
     <div class="form-group">
       <label for="nome">Name:</label>
-      <input type="text" class="form-control" id="username" placeholder="Enter name" name="nome" required="required">
+      <input type="text" #nome class="form-control" id="username" placeholder="Enter name"  required="required">
     </div>
     <div class="form-group">
       <label for="cognome">Surname:</label>
-      <input type="cognome" class="form-control" id="cognome" placeholder="Enter surname" name="cognome" required="required">
+      <input type="cognome" #cognome class="form-control" id="cognome" placeholder="Enter surname"  required="required">
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required="required">
+      <input type="email" #email class="form-control" id="email" placeholder="Enter email"  required="required">
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required="required">
+      <input type="password" #password class="form-control" id="password" placeholder="Enter password"  required="required">
     </div>
     <div class="form-group">
-      <label for="password">Conferm password:</label>
-      <input type="password" class="form-control" id="password" placeholder="Re-enter password" name="Cpassword" required="required">
+      <label for="Cpassword">Conferm password:</label>
+      <input type="password" #Cpassword class="form-control" id="password" placeholder="Re-enter password"  required="required">
     </div>
      <div class="form-group">
       <label for="data">Date:</label>
-      <input type="date" required="required">
+      <input type="date" #data required="required">
     </div>
 
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
     </div>
-    <button (click)="AddUser(username, nome, cognome, email, password, Cpassword, date)" class="btn btn-primary">Send</button>
+    <button (click)="AddUser(username, nome, cognome, email, password, Cpassword, data)" class="btn btn-primary">Send</button>
+    <br>
     <p>{{mex}}</p>
-  </form>
+
 </div>
 

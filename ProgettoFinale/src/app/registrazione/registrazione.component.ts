@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; //HTTP Client
+import { HttpClient, HttpHeaders, HttpParams  } from '@angular/common/http'; //HTTP Client
 import { Observable } from 'rxjs'; //OBSERVABLE
-import { HttpHeaders } from '@angular/common/http'; //HTTPHEADERS Client
+//import { HttpHeaders } from '@angular/common/http'; //HTTPHEADERS Client
+//import { HttpParams } from '@angular/common/http'; //HTTPPARAMS Client
 
 @Component({
   selector: 'app-registrazione',
@@ -14,35 +15,56 @@ export class RegistrazioneComponent implements OnInit {
   mex: String;
   constructor(public http: HttpClient) {}
 
-  AddUser(username: HTMLInputElement, nome: HTMLInputElement, cognome: HTMLInputElement, email:HTMLInputElement, password:HTMLInputElement, Cpassword: HTMLInputElement, data: HTMLInputElement): boolean {
+ //bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
-   this.http
-     .post('http://node15.codenvy.io:49855/register',
-       JSON.stringify({
-         'username': username.value,
-         'nome': nome.value,
-         'cognome': cognome.value,
-         'email': email.value,
-         'password': password.value,
-         'data': data.value
-       }),
-        {
-          headers: new HttpHeaders({
-            'Content-Type': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest',
-            'Access-Control-Allow-Origin': '*'
-          })
-     }).subscribe(data => {
-       console.log(data)
+ AddUser(username: HTMLInputElement, nome: HTMLInputElement, cognome: HTMLInputElement, email:HTMLInputElement, password:HTMLInputElement, Cpassword: HTMLInputElement, data: HTMLInputElement):boolean{
 
-          if (data == true) {
-            this.mex = 'Registrazione effettuata correttamente.';
-          } else {
-            this.mex = "Errore nella registrazione, riprova.";
-          }
+  if (password.value != Cpassword.value){
+    this.mex = "Errore, le password non coincidono.";
+    alert("a");
+  }else{
+    this.AddUserP(username.value, nome.value, cognome.value , email.value , password.value, data.value );
+  }
+  return false;
+}
+
+AddUserP(username:string, nome:string , cognome:string , email:string, password:string, data:string): void {
+
+   const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+
+    });
+
+ const params = new HttpParams()
+      .set('username', username)
+      .set('nome', nome)
+      .set('cognome', cognome)
+      .set('email', email)
+      .set('password', password)
+      .set('data', data);
+
+      const options = {
+      headers,
+      params,
+      withCredentials: false
+    };
+
+
+
+   this.http.post('https://3000-c58ed4f4-a087-4683-bc1d-2e35d72adad7.ws-eu0.gitpod.io/register',null, options  )
+     .subscribe(data => {
+
+       this.data = data;
+
+        if(data == true){
+          this.mex = "Registrazione avvenuta correttamente.";
+          alert("aa");
+       }else{
+          this.mex = "Errore nella registrazione, riprova.";
+          alert("ee");
+       }
+
      });
-
-     return false;
  }
 
   ngOnInit() {
