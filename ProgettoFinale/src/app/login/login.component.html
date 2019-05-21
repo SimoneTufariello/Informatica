@@ -1,10 +1,9 @@
 
 <div class="container">
   <h2>Login</h2>
-  <form>
     <div class="form-group">
-      <label for="username">Name:</label>
-      <input type="text" #nome class="form-control" id="nome" placeholder="Enter name"required="required">
+      <label for="username">Username:</label>
+      <input type="text" #username class="form-control" id="username" placeholder="Enter username"required="required">
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
@@ -14,9 +13,8 @@
     <div class="checkbox">
       <label><input type="checkbox" name="remember"> Remember me</label>
     </div>
-    <button (click)="LogUser(nome, password)" class="btn btn-primary">Send</button>
-    <br>
+    <button (click)="LogUser(username, password)" class="btn btn-primary">Send</button>
+    <br><br>
     <p>{{mex}}</p>
-  </form>
 </div>
 

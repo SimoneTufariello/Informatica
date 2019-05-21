@@ -21,7 +21,6 @@ export class RegistrazioneComponent implements OnInit {
 
   if (password.value != Cpassword.value){
     this.mex = "Errore, le password non coincidono.";
-    alert("a");
   }else{
     this.AddUserP(username.value, nome.value, cognome.value , email.value , password.value, data.value );
   }
@@ -58,10 +57,8 @@ AddUserP(username:string, nome:string , cognome:string , email:string, password:
 
         if(data == true){
           this.mex = "Registrazione avvenuta correttamente.";
-          alert("aa");
        }else{
           this.mex = "Errore nella registrazione, riprova.";
-          alert("ee");
        }
 
      });
