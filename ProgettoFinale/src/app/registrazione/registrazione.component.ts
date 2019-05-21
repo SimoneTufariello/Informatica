@@ -13,7 +13,11 @@ export class RegistrazioneComponent implements OnInit {
 
   data: Object; //usato per post
   mex: String;
-  constructor(public http: HttpClient) {}
+  public registerVisible: boolean;
+
+  constructor(public http: HttpClient) {
+    this.registerVisible = true;
+  }
 
  //bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 
@@ -57,6 +61,7 @@ AddUserP(username:string, nome:string , cognome:string , email:string, password:
 
         if(data == true){
           this.mex = "Registrazione avvenuta correttamente.";
+          this.registerVisible = false;
        }else{
           this.mex = "Errore nella registrazione, riprova.";
        }

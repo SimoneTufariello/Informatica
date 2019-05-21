@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams  } from '@angular/common/http'; //HTTP Client
 import { Observable } from 'rxjs'; //OBSERVABLE
 
@@ -10,9 +10,11 @@ import { Observable } from 'rxjs'; //OBSERVABLE
 export class LoginComponent implements OnInit {
   mex: String;
   data: Object;
+   //@Input() loginVisible: boolean;
+  public loginVisible: boolean;
 
   constructor(public http: HttpClient) {
-
+    this.loginVisible = true;
   }
 
  LogUser(username: HTMLInputElement, password:HTMLInputElement):boolean{
@@ -50,6 +52,7 @@ LogUserP(username:string, password:string): void {
 
         if(data == true){
           this.mex = "Login avvenuto correttamente.";
+          this.loginVisible = false;
        }else{
           this.mex = "Errore nel login, riprova.";
        }

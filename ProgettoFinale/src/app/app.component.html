@@ -10,16 +10,22 @@
 </head>
 <body>
   <div class="container">
-
       <div class="row">
         <div class="col-sm-8">
+          <h1>Mono Rent </h1>
+          <br>
+          <p *ngIf="paragVisible">Vuoi effettuare il <a href = "#" (click)='Log()'>Login</a> o la <a href = "#" (click)='Reg()'>registrazione</a>?</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8" *ngIf="loginVisible">
           <app-login> </app-login>
         </div>
       </div>
       <br>
       <br>
       <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-8" *ngIf="registerVisible">
           <app-registrazione> </app-registrazione>
         </div>
       </div>
