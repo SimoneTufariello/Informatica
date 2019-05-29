@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams  } from '@angular/common/http'; //HTTP Client
 import { Observable } from 'rxjs'; //OBSERVABLE
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,9 +13,11 @@ export class LoginComponent implements OnInit {
   data: Object;
    //@Input() loginVisible: boolean;
   public loginVisible: boolean;
+  public mappaVisible: boolean;
 
   constructor(public http: HttpClient) {
     this.loginVisible = true;
+    this.mappaVisible = false;
   }
 
  LogUser(username: HTMLInputElement, password:HTMLInputElement):boolean{
@@ -53,6 +56,7 @@ LogUserP(username:string, password:string): void {
         if(data == true){
           this.mex = "Login avvenuto correttamente.";
           this.loginVisible = false;
+          this.mappaVisible = true;
        }else{
           this.mex = "Errore nel login, riprova.";
        }
