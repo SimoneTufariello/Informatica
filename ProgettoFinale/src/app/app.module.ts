@@ -6,14 +6,18 @@ import { HttpClientModule } from '@angular/common/http'; //client
 import { LoginComponent } from './login/login.component';
 import { RegistrazioneComponent } from './registrazione/registrazione.component';//Importa Il modulo HttpClientModule
 import { AgmCoreModule } from '@agm/core';
-import { MappaComponent } from './mappa/mappa.component'; //Mappe
+import { MappaComponent } from './mappa/mappa.component';
+import { GuastoComponent } from './guasto/guasto.component';
+import { ScooteringComponent } from './scootering/scootering.component'; //Mappe
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegistrazioneComponent,
-    MappaComponent
+    MappaComponent,
+    GuastoComponent,
+    ScooteringComponent
   ],
   imports: [
     BrowserModule,
