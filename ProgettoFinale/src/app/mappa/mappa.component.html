@@ -2,6 +2,33 @@
 
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker *ngFor="let mono of monop" [latitude]= "mono.lat" [longitude]= "mono.long"></agm-marker>
-</agm-map>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <agm-map [latitude]="lat" [longitude]="lng">
+        <agm-marker *ngFor="let mono of monop" [latitude]= "mono.Lat" [longitude]= "mono.Long"></agm-marker>
+      </agm-map>
+    </div>
+
+    <div class="col-sm-4">
+      <input #QRCodeP name="QRCodeP" type="text" placeholder="Inserisci il QRCode" required>
+      <button (click)="PrenotaMonop(codice)" class="btn btn-primary">Prenota</button>
+
+      <br><br>
+
+      <input #QRCodeA name="QRCodeA" type="text" placeholder="Inserisci il QRCode" required>
+      <button (click)="LasciaMonop(codice)" class="btn btn-primary">Abbandona</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <app-guasto> </app-guasto>
+    </div>
+
+    <div class="col-sm-4">
+      <app-scootering> </app-scootering>
+    </div>
+  </div>
+
+</div>
