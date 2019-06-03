@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams  } from '@angular/common/http'; //HTTP Client
 import { Observable } from 'rxjs'; //OBSERVABLE
 import { Monop } from './Monop.model'; //OBSERVABLE
+import { CookieService } from 'ngx-cookie-service'; //COOKIE
 
 @Component({
   selector: 'app-mappa',

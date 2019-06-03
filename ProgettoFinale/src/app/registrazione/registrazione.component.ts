@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams  } from '@angular/common/http'; //H
 import { Observable } from 'rxjs'; //OBSERVABLE
 //import { HttpHeaders } from '@angular/common/http'; //HTTPHEADERS Client
 //import { HttpParams } from '@angular/common/http'; //HTTPPARAMS Client
+import { CookieService } from 'ngx-cookie-service'; //COOKIE
 
 @Component({
   selector: 'app-registrazione',
