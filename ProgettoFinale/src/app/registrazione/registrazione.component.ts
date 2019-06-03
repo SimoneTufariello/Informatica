@@ -16,7 +16,7 @@ export class RegistrazioneComponent implements OnInit {
   mex: String;
   public registerVisible: boolean;
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, private cookieService: CookieService) {
     this.registerVisible = true;
   }
 

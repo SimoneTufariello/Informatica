@@ -14,21 +14,17 @@ export class LoginComponent implements OnInit {
    //@Input() loginVisible: boolean;
   public loginVisible: boolean;
   public mappaVisible: boolean;
+  public cookie: boolean;
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, private cookieService: CookieService) {
     this.loginVisible = true;
     this.mappaVisible = false;
+
   }
 
- LogUser(username: HTMLInputElement, password:HTMLInputElement):boolean{
 
-     console.log(username);
-     console.log(password);
-    this.LogUserP(username.value, password.value);
-    return false;
-}
 
-LogUserP(username:string, password:string): void {
+LogUser(username:string, password:string): void {
 
    const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -53,9 +49,10 @@ LogUserP(username:string, password:string): void {
 
        this.data = data;
 
-        if(data == true){
+        if(data != false){
           this.mex = "Login avvenuto correttamente.";
-
+          console.log(data);
+          this.cookieService.set( 'Utente', data[0].ID );
           this.loginVisible = false;
           this.mappaVisible = true;
        }else{
