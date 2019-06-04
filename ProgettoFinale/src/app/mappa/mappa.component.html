@@ -12,12 +12,13 @@
 
     <div class="col-sm-4">
       <input #QRCodeP name="QRCodeP" type="text" placeholder="Inserisci il QRCode" required>
-      <button (click)="PrenotaMonop(codice)" class="btn btn-primary">Prenota</button>
-
+      <button (click)="PrenotaMonop(QRCode)" class="btn btn-primary">Prenota</button>
+      <p>{{mex}}</p>
       <br><br>
 
-      <input #QRCodeA name="QRCodeA" type="text" placeholder="Inserisci il QRCode" required>
-      <button (click)="LasciaMonop(codice)" class="btn btn-primary">Abbandona</button>
+
+      <button (click)="LasciaMonop()" class="btn btn-primary">Abbandona</button>
+      <p>{{mex2}}</p>
     </div>
   </div>
 
@@ -25,10 +26,10 @@
     <div class="col-sm-4">
       <app-guasto> </app-guasto>
     </div>
-
+  </div>
+  <div class="row">
     <div class="col-sm-4">
       <app-scootering> </app-scootering>
     </div>
   </div>
 
-</div>

@@ -1,3 +1,12 @@
-<p>
-  guasto works!
-</p>
+<div class="form-group">
+      <label for="descrizione">Descrizione del guasto:</label>
+      <input type="text" #descrizione class="form-control" id="descrizione" placeholder="Enter description"required="required">
+    </div>
+    <div class="form-group">
+      <label for="codGuasto">Codice del guasto:</label>
+      <input type="text" #codGuasto class="form-control" id="codGuasto" placeholder="Enter fault code" required="required">
+    </div>
+    <button (click)="SendGuasto(descrizione, codGuasto)" class="btn btn-primary">Segnala guasto</button>
+    <br><br>
+    <p>{{mex}}</p>
+</div>

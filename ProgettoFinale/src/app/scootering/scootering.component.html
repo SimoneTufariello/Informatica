@@ -1,3 +1,9 @@
-<p>
-  scootering works!
-</p>
+<div class="form-group">
+      <label for="destinazione">Destinazione:</label>
+      <input type="text" #destinazione class="form-control" id="destinazione" placeholder="Enter destination"required="required">
+    </div>
+
+    <button (click)="Scootering(destinazione)" class="btn btn-primary">Segnala guasto</button>
+    <br><br>
+    <p>{{mex}}</p>
+</div>

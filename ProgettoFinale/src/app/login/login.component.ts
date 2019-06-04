@@ -49,14 +49,14 @@ LogUser(username:string, password:string): void {
 
        this.data = data;
 
-        if(data != false){
+        if(data == false){
+          this.mex = "Errore nel login, riprova.";
+       }else{
           this.mex = "Login avvenuto correttamente.";
           console.log(data);
           this.cookieService.set( 'Utente', data[0].ID );
           this.loginVisible = false;
           this.mappaVisible = true;
-       }else{
-          this.mex = "Errore nel login, riprova.";
        }
 
      });
